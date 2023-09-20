@@ -1,6 +1,40 @@
-.warning {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100vh;
+body {
+    background-color: #ececec;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+}
+
+#sketch {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.square {
+    width: 16px;
+    height: 16px;
+    border-style: solid;
+    border-width: 2px;
+}
+
+p {
+    padding-left: 3px;
+    margin: 0;
+}
+
+main {
+    padding: 0 40px;
 }
