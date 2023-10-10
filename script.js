@@ -11,8 +11,6 @@ for (let i = 2; i <= 256; i++) {
     parent.appendChild(element)
 }
 
-// Simple example, see optional options for more configuration.
-
 
 const boxes = document.getElementsByClassName('grid_item')
 
@@ -31,4 +29,12 @@ function setColor() {
             box.style.backgroundColor = input.value;
         })
     }
+}
+
+let slider = document.getElementById('myRange')
+let output = document.getElementById('demo')
+output.innerHTML = slider.value;
+
+slider.oninput = function () {
+    output.innerHTML = this.value;
 }
