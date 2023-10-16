@@ -20,12 +20,14 @@ slider.addEventListener('input', function() {
     console.log(gridPixels)
 });
 
+let sliderSum = slider.value * slider.value; 
 
-for (let i = 2; i <= 256; i++) {
+for (let i = 2; i <= sliderSum; i++) {
     let element = document.createElement('div')
 
     // add "i" current number to grid item (i.e, grid_item 1)
     element.classList.add("grid_item")
+    console.log(sliderSum)
 
     parent.appendChild(element)
 }
