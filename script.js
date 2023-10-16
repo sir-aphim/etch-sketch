@@ -2,6 +2,25 @@ const parent = document.getElementById('grid')
 const eraseButton = document.querySelector('.erase')
 const input = document.getElementById('color-picker')
 
+let slider = document.getElementById('myRange')
+let output = document.getElementById('demo')
+output.innerHTML = slider.value;
+
+slider.oninput = function () {
+    output.innerHTML = this.value;
+}
+
+slider.addEventListener('input', function() {
+    let gridPixels = 480 / slider.value;
+    for (const box of boxes) {
+        box.style.backgroundColor = 'white';
+    }
+    parent.style.gridTemplateRows = `repeat(${slider.value}, ${gridPixels}px)`;
+    parent.style.gridTemplateColumns = `repeat(${slider.value}, ${gridPixels}px)`;
+    console.log(gridPixels)
+});
+
+
 for (let i = 2; i <= 256; i++) {
     let element = document.createElement('div')
 
@@ -31,10 +50,5 @@ function setColor() {
     }
 }
 
-let slider = document.getElementById('myRange')
-let output = document.getElementById('demo')
-output.innerHTML = slider.value;
 
-slider.oninput = function () {
-    output.innerHTML = this.value;
-}
+
