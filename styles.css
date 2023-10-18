@@ -34,17 +34,29 @@ main {
 .sketch > #grid {
     display: grid;
     box-sizing: border-box;
-    min-height: 0;
-    min-width: 0;
-    grid-template-rows: repeat(20, 24px);
-    grid-template-columns: repeat(20, 24px);
+    height: 480px;
+    width: 480px;
+    grid-template-rows: repeat(16, 30px);
+    grid-template-columns: repeat(16, 30px);
     box-shadow: 0px 0px 40px #939191;
     background-color: white;
 }
 
+.slidecontainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 p {
+    align-self: start;
     padding-left: 3px;
     margin: 0;
+}
+
+.current-grid {
+    align-self: center;
 }
 
 h1 {
