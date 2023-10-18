@@ -1,4 +1,4 @@
-const parent = document.getElementById('grid')
+const gridContainer = document.getElementById('grid')
 const eraseButton = document.querySelector('.erase')
 const input = document.getElementById('color-picker')
 
@@ -15,21 +15,19 @@ slider.addEventListener('input', function() {
     for (const box of boxes) {
         box.style.backgroundColor = 'white';
     }
-    parent.style.gridTemplateRows = `repeat(${slider.value}, ${gridPixels}px)`;
-    parent.style.gridTemplateColumns = `repeat(${slider.value}, ${gridPixels}px)`;
+    gridContainer.style.gridTemplateRows = `repeat(${slider.value}, ${gridPixels}px)`;
+    gridContainer.style.gridTemplateColumns = `repeat(${slider.value}, ${gridPixels}px)`;
     console.log(gridPixels)
 });
 
-let sliderSum = slider.value * slider.value; 
 
-for (let i = 2; i <= sliderSum; i++) {
+for (let i = 2; i <= 10000; i++) {
     let element = document.createElement('div')
 
     // add "i" current number to grid item (i.e, grid_item 1)
     element.classList.add("grid_item")
-    console.log(sliderSum)
 
-    parent.appendChild(element)
+    gridContainer.appendChild(element)
 }
 
 
@@ -41,12 +39,12 @@ eraseButton.addEventListener('click', () => {
     }
 })
 
-setColor();
+setColor()
 input.addEventListener("input", setColor);
 
-function setColor() {
+function setColor(event) {
     for (const box of boxes) {
-        box.addEventListener("mouseover", () => {
+        box.addEventListener("mouseenter", () => {
             box.style.backgroundColor = input.value;
         })
     }
