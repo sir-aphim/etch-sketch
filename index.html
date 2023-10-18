@@ -16,10 +16,10 @@
             <p>Hover over the blank canvas to draw.</p>
             <button type="button" class="btn btn-outline-dark erase">Erase all</button>
 
-            <p>Select grid size:</p>
             <div class="slidecontainer">
-                <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-                <p><span id="demo"></span></p>
+                <p>Select grid size:</p>
+                <input type="range" min="1" max="100" value="16" class="slider" id="myRange">
+                <p class="current-grid"><span id="demo"></span>px</p>
               </div>
             
 
@@ -34,7 +34,7 @@
         <div class="sketch">
 
             <div id="grid">
-                <div class="grid_item 1"></div>
+                <div class="grid_item"></div>
             </div>
 
         </div>
