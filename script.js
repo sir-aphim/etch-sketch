@@ -37,18 +37,32 @@ eraseButton.addEventListener('click', () => {
     for (const box of boxes) {
         box.style.backgroundColor = 'white';
     }
+    isClicked = true;
 })
 
-setColor()
+isClicked = true;
+
+gridContainer.onclick = function () {
+    if (isClicked) {
+        setColor();
+        console.log("Drawing is on.")
+        isClicked = false;
+    } else {
+        isClicked = true;
+        return console.log("Drawing is off.")
+    }
+    
+}
+
+
 input.addEventListener("input", setColor);
 
 function setColor(event) {
     for (const box of boxes) {
         box.addEventListener("mouseenter", () => {
-            box.style.backgroundColor = input.value;
+            if (!isClicked) {
+                box.style.backgroundColor = input.value;
+            }
         })
     }
 }
-
-
-
