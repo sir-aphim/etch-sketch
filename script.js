@@ -1,4 +1,5 @@
 const gridContainer = document.getElementById('grid')
+const brushButton = document.querySelector('.brush')
 const eraseButton = document.querySelector('.erase')
 const rainbowButton = document.querySelector('.rainbow')
 const input = document.getElementById('color-picker')
@@ -46,6 +47,20 @@ rainbowButton.addEventListener('click', () => {
     console.log('rainbo mode')
 })
 
+rainbowButton.addEventListener("click", () => {
+    gridContainer.onclick = function () {
+        if (isClicked) {
+            setRandomColor();
+            console.log("Drawing is on.")
+            isClicked = false;
+        } else {
+            isClicked = true;
+            return console.log("Drawing is off.")
+        }
+        
+    }  
+})
+
 isClicked = true;
 
 gridContainer.onclick = function () {
@@ -76,7 +91,7 @@ function setColor(event) {
 function setRandomColor(event) {
     for (const box of boxes) {
         box.addEventListener("mouseenter", () => {
-            if (isClicked) {
+            if (!isClicked) {
                 let randomColor = "#" + ((1 << 24) * Math.random() | 0).toString(16).padStart(6, "0")
                 box.style.backgroundColor = randomColor;
                 console.log(box.style.backgroundColor)
