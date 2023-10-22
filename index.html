@@ -19,6 +19,12 @@
         <div class="info">
             
             <p>Click on the grid to use the brush; to hide it, click again.</p>
+
+            <div style="position:relative; display:inline-block">
+                <label for="favcolor">Brush Color:</label>
+                <input type="color" id="color-picker" value="#000000"/>
+            </div>
+
             <button type="button" class="btn btn-outline-dark erase">Erase all</button>
 
             <div class="slidecontainer">
@@ -27,21 +33,12 @@
                 <p class="current-grid"><span id="demo"></span>px</p>
               </div>
             
-
-            <div style="position:relative; display:inline-block">
-                <label for="favcolor">Select your brush color:</label>
-                <input type="color" id="color-picker" value="#000000"/>
-            </div>
+          
             
         </div>
 
-        <!-- probably should add a specific height and width to sketch (i.e, so the squares don't get out of hand) -->
-        <div class="sketch">
-
-            <div id="grid">
-                <div class="grid_item"></div>
-            </div>
-
+        <div id="grid">
+            <div class="grid_item"></div>
         </div>
 
     </main>
