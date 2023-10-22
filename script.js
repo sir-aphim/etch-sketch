@@ -45,23 +45,21 @@ eraseButton.addEventListener('click', () => {
 
 // try to create function for the grid container event to avoid repetition
 rainbowButton.addEventListener("click", () => {
+    setRandomColor();
     gridContainer.onclick = function () {
         if (isClicked) {
-            setRandomColor();
-            console.log("Drawing is on.")
             isClicked = false;
         } else {
             isClicked = true;
-            return console.log("Drawing is off.")
         }
         
     }  
 })
 
 brushButton.addEventListener("click", () => {
+    setColor();
     gridContainer.onclick = function () {
         if (isClicked) {
-            setColor();
             console.log("Drawing is on.")
             isClicked = false;
         } else {
