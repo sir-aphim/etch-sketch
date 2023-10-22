@@ -12,27 +12,31 @@
 <body>  
     <header>
         <h1>Etch-a-Sketch</h1>
+        <p>Click on the grid to use the brush; to hide it, click again.</p>
     </header>
     <main>
        
 
         <div class="info">
+
+            <div class="slidecontainer">
+                <p>Grid Slider:</p>
+                <input type="range" min="1" max="100" value="16" class="slider" id="myRange">
+                <p class="current-grid"><span id="demo"></span>px</p>
+              </div>
+
             
-            <p>Click on the grid to use the brush; to hide it, click again.</p>
 
             <div style="position:relative; display:inline-block">
                 <label for="favcolor">Brush Color:</label>
                 <input type="color" id="color-picker" value="#000000"/>
             </div>
 
-            <button type="button" class="btn btn-outline-dark erase">Erase all</button>
+            <button type="button" class="btn btn-outline-dark brush">Brush Mode</button>
+            <button type="button" class="btn btn-outline-dark rainbow">Rainbow Mode</button>
+            <button type="button" class="btn btn-outline-dark eraser">Eraser</button>
+            <button type="button" class="btn btn-outline-dark erase">Clear</button>
 
-            <div class="slidecontainer">
-                <p>Select grid size:</p>
-                <input type="range" min="1" max="100" value="16" class="slider" id="myRange">
-                <p class="current-grid"><span id="demo"></span>px</p>
-              </div>
-            
           
             
         </div>
