@@ -20,7 +20,6 @@ slider.addEventListener('input', function() {
     }
     gridContainer.style.gridTemplateRows = `repeat(${slider.value}, ${gridPixels}px)`;
     gridContainer.style.gridTemplateColumns = `repeat(${slider.value}, ${gridPixels}px)`;
-    console.log(gridPixels)
 });
 
 
@@ -71,11 +70,9 @@ brushButton.addEventListener("click", () => {
     setColor();
     gridContainer.onclick = function () {
         if (isClicked) {
-            console.log("Drawing is on.")
             isClicked = false;
         } else {
             isClicked = true;
-            return console.log("Drawing is off.")
         }
         
     }
@@ -84,11 +81,9 @@ brushButton.addEventListener("click", () => {
 gridContainer.onclick = function () {
     if (isClicked) {
         setColor();
-        console.log("Drawing is on.")
         isClicked = false;
     } else {
         isClicked = true;
-        return console.log("Drawing is off.")
     }
     
 }
