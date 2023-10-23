@@ -1,7 +1,8 @@
 const gridContainer = document.getElementById('grid')
 const brushButton = document.querySelector('.brush')
-const eraseButton = document.querySelector('.erase')
+const clearButton = document.querySelector('.clear')
 const rainbowButton = document.querySelector('.rainbow')
+const eraseButton = document.querySelector('.eraser')
 const input = document.getElementById('color-picker')
 
 let slider = document.getElementById('myRange')
@@ -37,9 +38,19 @@ const boxes = document.getElementsByClassName('grid_item')
 
 isClicked = true;
 
-eraseButton.addEventListener('click', () => {
+clearButton.addEventListener('click', () => {
     for (const box of boxes) {
         box.style.backgroundColor = 'white';
+    }
+})
+
+eraseButton.addEventListener('click', () => {
+    for (const box of boxes) {
+        box.addEventListener("mouseenter", () => {
+            if (!isClicked) {
+                box.style.backgroundColor = 'white';
+            }
+        })
     }
 })
 
